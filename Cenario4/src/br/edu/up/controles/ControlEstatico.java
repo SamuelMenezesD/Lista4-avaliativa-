@@ -7,10 +7,21 @@ public class ControlEstatico {
 
     private static Estacionamento estacionamento = new Estacionamento();
 
-    public static void estacionaCarro(Carro carro){
+    public static void estacionaCarro(Carro carro) {
 
         estacionamento.EstacionarCarro(carro);
     }
-    
+
+    public static void RetirarCarro(String placa) {
+
+        estacionamento.RetirarCarro(placa);
+        
+    }
+
+    public static void GerarRelatorio(){
+
+                   
+
+    }
 
 }

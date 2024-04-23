@@ -1,7 +1,7 @@
 package br.edu.up.modelos;
 
 public class Estacionamento {
-    
+
     private Carro[] carros = new Carro[10];
 
     private int QuantidadeCarrosEntrada;
@@ -9,6 +9,16 @@ public class Estacionamento {
     private int QuantidadeCarrosSaida;
 
     private int QuantidadeCarrosAtual;
+
+    private double ReceitaDiaria;
+
+    public double getReceitaDiaria() {
+        return ReceitaDiaria;
+    }
+
+    public void setReceitaDiaria(double receitaDiaria) {
+        ReceitaDiaria = receitaDiaria;
+    }
 
     private final int QUANTIDADE_MAXIMA_CARROS = 10;
 
@@ -21,7 +31,7 @@ public class Estacionamento {
 
     }
 
-    public Carro RetirarCarro(String placa) {
+    public void RetirarCarro(String placa) {
 
         for (Carro carro : carros) {
 
@@ -30,13 +40,11 @@ public class Estacionamento {
                 QuantidadeCarrosSaida++;
                 QuantidadeCarrosAtual--;
 
-                return carro;
+                carro = null;
 
             }
 
         }
-
-        return null;
 
     }
 
