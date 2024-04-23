@@ -12,14 +12,6 @@ public class Estacionamento {
 
     private double ReceitaDiaria;
 
-    public double getReceitaDiaria() {
-        return ReceitaDiaria;
-    }
-
-    public void setReceitaDiaria(double receitaDiaria) {
-        ReceitaDiaria = receitaDiaria;
-    }
-
     private final int QUANTIDADE_MAXIMA_CARROS = 10;
 
     public void EstacionarCarro(Carro carro) {
@@ -48,16 +40,11 @@ public class Estacionamento {
 
     }
 
-    public Carro[] getCarros() {
-        return this.carros;
+    public double GerarReceitaTotalDia(){
+
+        return this.QuantidadeCarrosEntrada * 5;
+
     }
 
-    public void setCarros(Carro[] carros) {
-        this.carros = carros;
-    }
-
-    public int getQUANTIDADE_MAXIMA_CARROS() {
-        return QUANTIDADE_MAXIMA_CARROS;
-    }
 
 }

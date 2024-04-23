@@ -55,6 +55,8 @@ public class Controleestacionamento {
             }
             case 3: {
 
+                ControlEstatico.
+
                 break;
             }
             default:

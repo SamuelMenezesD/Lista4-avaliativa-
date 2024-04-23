@@ -19,8 +19,17 @@ public class ControlEstatico {
     }
 
     public static void GerarRelatorio(){
+    
+        //Arrumar Parte estacionamento 
+        String.format("Quantidade de Carros no dia: %d",this.QuantidadeCarrosEntrada);
 
-                   
+        String.format("Quantidade de receita gerada no dia : %f.2",this.receita);
+
+        String.format("Quantidade de Carros estacionados : %d",this.QuantidadeCarrosAtual);
+
+        String.format("Quantidade de Carros que sairam : %d",this.QuantidadeCarrosSaida);
+
+
 
     }
 
