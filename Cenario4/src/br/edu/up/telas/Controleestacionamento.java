@@ -2,12 +2,13 @@ package br.edu.up.telas;
 
 import java.util.Scanner;
 
+import br.edu.up.controles.ControlEstatico;
 import br.edu.up.modelos.Carro;
 
 public class Controleestacionamento {
-Scanner leitor = new Scanner(System.in);
+    Scanner leitor = new Scanner(System.in);
 
-    public void Mostrarmenu(){
+    public void Mostrarmenu() {
         System.out.println();
         System.out.println("-----------------");
         System.out.println("  MENU INICIAL");
@@ -34,13 +35,26 @@ Scanner leitor = new Scanner(System.in);
 
                 System.out.println("Insira a Cor do Carro: ");
                 carro.setCor(leitor.nextLine());
+
+                System.out.println("Insira O Horario de Entrada do Carro: ");
+                carro.setEntrada(leitor.nextInt());
                 break;
             case 2: {
+
+                System.out.println("Retirar Carro Favor Informar A Placa: ");
+                String placa = leitor.nextLine();
+
+                System.out.println("Insira a saida: (0) Manha (1) Tarde (2) Noite");
+               // carro.setSaida(leitor.nextInt());
                 
+                ControlEstatico.RetirarCarro(placa);
+
+                System.out.println("Carro Retirado");
+
                 break;
             }
             case 3: {
-                
+
                 break;
             }
             default:
