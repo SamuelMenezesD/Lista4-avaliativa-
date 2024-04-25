@@ -4,8 +4,11 @@ import java.util.Scanner;
 
 import br.edu.up.controles.ControlEstatico;
 import br.edu.up.modelos.Carro;
+import br.edu.up.modelos.Estacionamento;
 
 public class Controleestacionamento {
+
+
     Scanner leitor = new Scanner(System.in);
 
     public void Mostrarmenu() {
@@ -25,6 +28,7 @@ public class Controleestacionamento {
 
         switch (opcao) {
             case 1:
+
                 Carro carro = new Carro();
 
                 System.out.println("Insira Placa do Carro");
@@ -36,17 +40,13 @@ public class Controleestacionamento {
                 System.out.println("Insira a Cor do Carro: ");
                 carro.setCor(leitor.nextLine());
 
-                System.out.println("Insira O Horario de Entrada do Carro: ");
-                carro.setEntrada(leitor.nextInt());
-                break;
+                ControlEstatico.estacionaCarro(carro);
+
             case 2: {
 
                 System.out.println("Retirar Carro Favor Informar A Placa: ");
                 String placa = leitor.nextLine();
 
-                System.out.println("Insira a saida: (0) Manha (1) Tarde (2) Noite");
-               // carro.setSaida(leitor.nextInt());
-                
                 ControlEstatico.RetirarCarro(placa);
 
                 System.out.println("Carro Retirado");
@@ -54,6 +54,9 @@ public class Controleestacionamento {
                 break;
             }
             case 3: {
+
+                System.out.println(("Gerar relatorio"));
+                ControlEstatico.GerarRelatorio();
 
                 break;
             }

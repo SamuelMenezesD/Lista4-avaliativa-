@@ -8,7 +8,7 @@ public class Estacionamento {
 
     private int QuantidadeCarrosSaida;
 
-    private int QuantidadeCarrosAtual;
+    private int QuantidadeCarrosAtual = 0;
 
     private double ReceitaDiaria;
 
@@ -24,15 +24,33 @@ public class Estacionamento {
 
     public void EstacionarCarro(Carro carro) {
 
-        this.carros[QuantidadeCarrosAtual - 1] = carro;
+
+        if(this.QuantidadeCarrosAtual < QUANTIDADE_MAXIMA_CARROS){
+        this.carros[QuantidadeCarrosAtual] = carro;
 
         this.QuantidadeCarrosAtual++;
         this.QuantidadeCarrosEntrada++;
+    }
+    else{
+
+        System.out.println("Estacionamento cheio");
+
+    }
+
+    }
+
+    public void GerarReceita(){
+
+        double receitaDiaria = this.QuantidadeCarrosEntrada * 5.0;
+
+        System.out.println(String.format("Receita do dia: %.2f Entrada de Carros: %d Saida de Carros: %d", 
+        receitaDiaria,this.QuantidadeCarrosEntrada,this.QuantidadeCarrosSaida));
 
     }
 
     public void RetirarCarro(String placa) {
 
+        if(this.QuantidadeCarrosAtual >= 1){
         for (Carro carro : carros) {
 
             if (carro.getPlaca().equalsIgnoreCase(placa)) {
@@ -46,6 +64,9 @@ public class Estacionamento {
 
         }
 
+        System.out.println("Carro retirado!");
+    }
+    else{System.out.println("Quantidade de carros invalida para retirada");}
     }
 
     public Carro[] getCarros() {
