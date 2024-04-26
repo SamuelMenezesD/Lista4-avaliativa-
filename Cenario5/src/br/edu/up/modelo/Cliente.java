@@ -2,21 +2,32 @@ package br.edu.up.modelo;
 
 public class Cliente {
 
-    private String nome;
-    private int quantidadepessoas;
+    private Pessoa NomeResponsavel;
+     
+    private Pessoa[] PessoasReservas;
     
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public int getQuantidadepessoas() {
-        return quantidadepessoas;
-    }
-    public void setQuantidadepessoas(int quantidadepessoas) {
-        this.quantidadepessoas = quantidadepessoas;
+    
+    public Cliente(Pessoa nomeResponsavel, Pessoa[] pessoasReservas) {
+        NomeResponsavel = nomeResponsavel;
+        PessoasReservas = pessoasReservas;
     }
 
+    public Pessoa getNomeResponsavel() {
+        return NomeResponsavel;
+    }
+
+    public void setNomeResponsavel(Pessoa nomeResponsavel) {
+        NomeResponsavel = nomeResponsavel;
+    }
+
+    public Pessoa[] getPessoasReservas() {
+        return PessoasReservas;
+    }
+
+    public void setPessoasReservas(Pessoa[] pessoasReservas) {
+        PessoasReservas = pessoasReservas;
+    }
+
+    
     
 }

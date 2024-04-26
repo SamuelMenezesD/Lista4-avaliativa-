@@ -1,11 +1,18 @@
 package br.edu.up.modelo;
 public class Evento {
+
     private String nome;
+    
     private String data;
+    
     private String local;
+    
     private int lotacao;
+    
     private int quantidadeingresso;
+    
     private double valoringresso;
+    
     private int id;
     
     public String getNome() {
