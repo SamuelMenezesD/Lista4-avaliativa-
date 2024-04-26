@@ -8,6 +8,30 @@ public class Estacionamento {
 
     private int QuantidadeCarrosSaida;
 
+    public int getQuantidadeCarrosEntrada() {
+        return QuantidadeCarrosEntrada;
+    }
+
+    public void setQuantidadeCarrosEntrada(int quantidadeCarrosEntrada) {
+        QuantidadeCarrosEntrada = quantidadeCarrosEntrada;
+    }
+
+    public int getQuantidadeCarrosSaida() {
+        return QuantidadeCarrosSaida;
+    }
+
+    public void setQuantidadeCarrosSaida(int quantidadeCarrosSaida) {
+        QuantidadeCarrosSaida = quantidadeCarrosSaida;
+    }
+
+    public int getQuantidadeCarrosAtual() {
+        return QuantidadeCarrosAtual;
+    }
+
+    public void setQuantidadeCarrosAtual(int quantidadeCarrosAtual) {
+        QuantidadeCarrosAtual = quantidadeCarrosAtual;
+    }
+
     private int QuantidadeCarrosAtual = 0;
 
     private double ReceitaDiaria;
@@ -42,9 +66,6 @@ public class Estacionamento {
     public void GerarReceita(){
 
         double receitaDiaria = this.QuantidadeCarrosEntrada * 5.0;
-
-        System.out.println(String.format("Receita do dia: %.2f Entrada de Carros: %d Saida de Carros: %d", 
-        receitaDiaria,this.QuantidadeCarrosEntrada,this.QuantidadeCarrosSaida));
 
     }
 
