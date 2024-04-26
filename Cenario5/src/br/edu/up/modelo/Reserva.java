@@ -2,7 +2,7 @@ package br.edu.up.modelo;
 
 public class Reserva {
 
-    private Cliente Clientes[];
+    private Cliente Cliente;
 
     private Evento evento;
 
@@ -10,13 +10,29 @@ public class Reserva {
 
     private double valor;
 
+    private int idreserva;
+    
+    public Reserva(br.edu.up.modelo.Cliente cliente, Evento evento, String data, double valor, int idreserva) {
+        Cliente = cliente;
+        this.evento = evento;
+        this.data = data;
+        this.valor = valor;
+        this.idreserva = idreserva;
+    }
 
-    public Cliente[] getClientes() {
-        return Clientes;
+    public Reserva(br.edu.up.modelo.Cliente cliente, Evento evento, String data, double valor) {
+        Cliente = cliente;
+        this.evento = evento;
+        this.data = data;
+        this.valor = valor;
     }
-    public void setClientes(Cliente[] clientes) {
-        Clientes = clientes;
-    }
+
+    // public int incrementoIdevento(){
+    //     for(i = 0;i >  i++){
+
+    //     }
+    //     return id;
+    // }
     public Evento getEvento() {
         return evento;
     }
@@ -35,6 +51,12 @@ public class Reserva {
     }
     public void setValor(double valor) {
         this.valor = valor;
+    }
+    public Cliente getCliente() {
+        return Cliente;
+    }
+    public void setCliente(Cliente cliente) {
+        Cliente = cliente;
     }
 
     
