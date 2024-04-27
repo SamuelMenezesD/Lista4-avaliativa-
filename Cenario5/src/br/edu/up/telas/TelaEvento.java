@@ -2,7 +2,9 @@ package br.edu.up.telas;
 
 import java.util.Scanner;
 
+import br.edu.up.controle.ContoleReserva;
 import br.edu.up.controles.ControlEstatico;
+import br.edu.up.modelo.Pessoa;
 import br.edu.up.modelos.Carro;
 import br.edu.up.modelos.Estacionamento;
 
@@ -79,25 +81,40 @@ public class TelaEvento {
         System.out.println("3. Mudar Data Reserva");
 
         int opcao = leitor.nextInt();
+        int id = 0;
 
         switch (opcao) {
             case 1:
 
+                System.out.println("Informe o nome novo:");
                 String nomeNovo = leitor.nextLine();
-                
+
+            ContoleReserva.AlterarNomeReserva(id, nomeNovo);
 
             break;
               
             case 2: {
 
+                int x = 0;
+
+                //TODO : Array pessoas implementar e ID
+                Pessoa[] pessoas = new Pessoa[x];
+
+                ContoleReserva.AlterarPessoasReserva(id, pessoas);
 
                 break;
             }
             case 3: {
 
+                System.out.println("Informe a data nova: ");
+                String data = leitor.nextLine();
+
+                ContoleReserva.AlterarDataReserva(data, id);
                 break;
             }
             default:
+            
+
                 break;
         }
 

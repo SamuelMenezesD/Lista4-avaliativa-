@@ -3,17 +3,24 @@ import java.util.ArrayList;
 
 import br.edu.up.modelo.Cliente;
 import br.edu.up.modelo.Evento;
+import br.edu.up.modelo.Pessoa;
 import br.edu.up.modelo.Reserva;
 
 public class ContoleReserva {
     
-    private static ArrayList<Reserva> reservas = new ArrayList<>();
+    private static Reserva[] reservas = new Reserva[100];
+
+    private static int quantReservas = 0;
     
     public static void Resevar(Cliente cliente, Evento evento, String data){
         
         double valor = cliente.getPessoasReservas().length * evento.getValoringresso();
 
-        reservas.add(new Reserva(cliente, evento, data, valor, reservas.size() + 1));
+        Reserva reserva = new Reserva(cliente, evento, data, valor,quantReservas);
+
+        reservas[quantReservas] = reserva;
+
+        quantReservas++;
 
     }
 
@@ -29,11 +36,7 @@ public class ContoleReserva {
                 if(reserva.getIdreserva() == id){
 
                     reserva.setStatus(false);
-
-                }
-                else{
-
-                    System.out.println("Reserva nao encontrada Favor Passar ID Valido");
+                    return;
 
                 }
 
@@ -41,6 +44,8 @@ public class ContoleReserva {
 
         }
 
+        System.out.println("Reserva nao encontrada");
+            
     }
 
     public static void ExcluirEvento(Evento evento){
@@ -52,41 +57,74 @@ public class ContoleReserva {
                     if(reserva.getEvento().hashCode() == evento.hashCode()){
 
                         reserva.getEvento().setStatus(false);
-
-                    }else{
-
-                        System.out.println("Evento nao encontrado");
+                        return;
 
                     }
+                }
+            }
 
+            System.out.println("Reserva nao encontrada ");
+    }
+
+    public static void AlterarNomeReserva(int id, String nome){
+
+        for (Reserva reserva : reservas) {
+            
+            if(reserva.isStatus()){
+
+                if(reserva.getIdreserva() == id){
+
+                    reserva.getCliente().getNomeResponsavel().setNome(nome);;
+                    return;
                 }
 
             }
-    }
 
-    public static void AlterarReserva(int NumOpcao){
-
-        switch (NumOpcao) {
-            case 1:
-                
-
-
-                break;
-            case 2:
-                
-                break;
-            case 3:
-                
-                break;
-        
-            default:
-            
-            break;
         }
 
+        System.out.println("Reserva nao encontrada");
+    
+    }
+
+    public static void AlterarPessoasReserva(int id,Pessoa[] pessoas){
+
+        for (Reserva reserva : reservas) {
+            
+            if(reserva.isStatus()){
+
+                if(reserva.getIdreserva() == id){
+
+                    reserva.getCliente().setPessoasReservas(pessoas);
+                    return;
+                }
+
+            }
+
+        }
+
+        System.out.println("Reserva nao encontrada");
+
+    }
+
+    public static void AlterarDataReserva(String data,int id){
+
+        for (Reserva reserva : reservas) {
+            
+            if(reserva.isStatus()){
+
+                if(reserva.getIdreserva() == id){
+
+                    reserva.setData(data);
+                    return;
+                }
+
+            }
+
+        }
+
+        System.out.println("Reserva nao encontrada");
+
     }
 
 
-
-    
 }
