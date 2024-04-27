@@ -1,6 +1,8 @@
 package br.edu.up.modelo;
 public class Evento {
 
+    private boolean Status = true;
+
     private String nome;
     
     private String data;
@@ -91,6 +93,12 @@ public class Evento {
         } else if (!local.equals(other.local))
             return false;
         return true;
+    }
+    public boolean isStatus() {
+        return Status;
+    }
+    public void setStatus(boolean status) {
+        Status = status;
     }
 
     

@@ -6,7 +6,7 @@ import br.edu.up.controles.ControlEstatico;
 import br.edu.up.modelos.Carro;
 import br.edu.up.modelos.Estacionamento;
 
-public class Controleestacionamento {
+public class TelaEvento {
 
 
     Scanner leitor = new Scanner(System.in);
@@ -20,7 +20,7 @@ public class Controleestacionamento {
         System.out.println("Digite o número da opção:");
         System.out.println();
 
-        System.out.println("1. Entrada de Veiculo");
+        System.out.println("1. Gerar Reserva");
         System.out.println("2. Saída de Veiculo");
         System.out.println("3. Gerar Relatorio");
 
@@ -65,5 +65,43 @@ public class Controleestacionamento {
         }
 
     }
+
+    public void MenuAlteracaoReserva() {
+        System.out.println();
+        System.out.println("-----------------");
+        System.out.println("-----------------");
+        System.out.println();
+        System.out.println("Digite o número da opção:");
+        System.out.println();
+
+        System.out.println("1. Mudar Nome Responsavel");
+        System.out.println("2. Mudar Pessoas");
+        System.out.println("3. Mudar Data Reserva");
+
+        int opcao = leitor.nextInt();
+
+        switch (opcao) {
+            case 1:
+
+                String nomeNovo = leitor.nextLine();
+                
+
+            break;
+              
+            case 2: {
+
+
+                break;
+            }
+            case 3: {
+
+                break;
+            }
+            default:
+                break;
+        }
+
+    }
+
 
 }

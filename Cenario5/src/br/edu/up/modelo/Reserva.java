@@ -2,6 +2,8 @@ package br.edu.up.modelo;
 
 public class Reserva {
 
+    private boolean Status = true;
+
     private Cliente Cliente;
 
     private Evento evento;
@@ -11,7 +13,25 @@ public class Reserva {
     private double valor;
 
     private int idreserva;
+
     
+    
+    public boolean isStatus() {
+        return Status;
+    }
+
+    public void setStatus(boolean status) {
+        Status = status;
+    }
+
+    public int getIdreserva() {
+        return idreserva;
+    }
+
+    public void setIdreserva(int idreserva) {
+        this.idreserva = idreserva;
+    }
+
     public Reserva(br.edu.up.modelo.Cliente cliente, Evento evento, String data, double valor, int idreserva) {
         Cliente = cliente;
         this.evento = evento;

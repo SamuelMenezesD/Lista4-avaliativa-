@@ -21,6 +21,7 @@ public class ControlEstatico {
     public static void GerarRelatorio(){
 
         System.out.println(String.format("Receita do dia: %.2f Entrada de Carros: %d Saida de Carros: %d", 
+        
         estacionamento.getReceitaDiaria(),estacionamento.getQuantidadeCarrosEntrada(),estacionamento.getQuantidadeCarrosSaida()));
 
     }
