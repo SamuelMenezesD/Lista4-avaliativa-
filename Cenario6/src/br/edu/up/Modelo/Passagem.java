@@ -1,12 +1,18 @@
-package br.up.edu.Modelo;
+package br.edu.up.Modelo;
 
 public class Passagem {
 
     private String DataVoo;
 
-    private int NumeroAessnto;
+    private int NumeroAssento;
 
     private String ClasseAssento;
+
+    public Passagem(int NumeroAssento, String ClasseAssento, String DataVoo) {
+        this.NumeroAssento = NumeroAssento;
+        this.ClasseAssento = ClasseAssento;
+        this.DataVoo = DataVoo;
+    }
 
     public String getDataVoo() {
         return DataVoo;
@@ -16,12 +22,12 @@ public class Passagem {
         DataVoo = dataVoo;
     }
 
-    public int getNumeroAessnto() {
-        return NumeroAessnto;
+    public int getNumeroAssento() {
+        return NumeroAssento;
     }
 
     public void setNumeroAessnto(int numeroAessnto) {
-        NumeroAessnto = numeroAessnto;
+        NumeroAssento = numeroAessnto;
     }
 
     public String getClasseAssento() {

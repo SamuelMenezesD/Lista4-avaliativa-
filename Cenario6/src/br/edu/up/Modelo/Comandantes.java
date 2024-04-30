@@ -1,4 +1,4 @@
-package br.up.edu.Modelo;
+package br.edu.up.Modelo;
 
 public class Comandantes extends Tripulacao{
 

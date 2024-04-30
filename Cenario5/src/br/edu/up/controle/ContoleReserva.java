@@ -1,5 +1,4 @@
 package br.edu.up.controle;
-import java.util.ArrayList;
 
 import br.edu.up.modelo.Cliente;
 import br.edu.up.modelo.Evento;
