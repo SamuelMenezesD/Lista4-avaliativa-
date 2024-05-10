@@ -2,18 +2,21 @@ package br.edu.up.Tela;
 
 import java.util.Scanner;
 
-import Modelo.AgendaContatos;
-import Modelo.Contato;
-import Modelo.ContatoComercial;
-import Modelo.ContatoPessoal;
+import br.edu.up.Controller.AgendaController;
+import br.edu.up.Modelo.Contato;
+import br.edu.up.Modelo.ContatoComercial;
+import br.edu.up.Modelo.ContatoPessoal;
+
+
 
 public class Tela {
+  
     private static Scanner scanner;
-    private static AgendaContatos agenda;
+  
 
     public static void main(String[] args) {
+        
         scanner = new Scanner(System.in);
-        agenda = new AgendaContatos();
 
         exibirMenu();
     }
@@ -69,7 +72,8 @@ public class Tela {
         String aniversario = scanner.next();
 
         ContatoPessoal contatoPessoal = new ContatoPessoal( nome,telefone, codigo,aniversario);
-        agenda.adicionarContato(contatoPessoal);
+        
+        AgendaController.IncluirContatoPessoal(contatoPessoal);
 
         System.out.println("Contato pessoal adicionado com sucesso!");
         System.out.println();
@@ -87,8 +91,7 @@ public class Tela {
         String cnpj = scanner.next();
 
         ContatoComercial contatoComercial = new ContatoComercial(nome, telefone, codigo, cnpj);
-        agenda.adicionarContato(contatoComercial);
-
+        AgendaController.IncluirContatoComercial(contatoComercial);
         System.out.println("Contato comercial adicionado com sucesso!");
         System.out.println();
     }
@@ -98,7 +101,7 @@ public class Tela {
         System.out.print("Código do contato: ");
         int codigo = scanner.nextInt();
 
-        boolean contatoRemovido = agenda.removerContato(codigo);
+        boolean contatoRemovido = AgendaController.ExcluirContatoCodigo(codigo);
 
         if (contatoRemovido) {
             System.out.println("Contato removido com sucesso!");
@@ -114,7 +117,7 @@ public class Tela {
         System.out.print("Código do contato: ");
         int codigo = scanner.nextInt();
 
-        Contato contato = agenda.buscarContato(codigo);
+        Contato contato = AgendaController.ConsultarContatoCodigo(codigo);
 
         if (contato != null) {
             System.out.println(contato);
@@ -127,7 +130,7 @@ public class Tela {
 
     public static void listarContatos() {
         System.out.println("===== Lista de Contatos =====");
-        agenda.listarContatos();
+        AgendaController.ListarTodosContatos();
         System.out.println();
     }
     

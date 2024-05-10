@@ -24,11 +24,16 @@ public class Tela {
 
             switch (opcao) {
                 case 1:
+
                     adicionarProfessor();
+                
                     break;
                 case 2:
-                    verificarSituacaoAluno();
-                    break;
+                
+                verificarSituacaoAluno();
+                
+                break;
+                
                 case 0:
                     sair = true;
                     break;
