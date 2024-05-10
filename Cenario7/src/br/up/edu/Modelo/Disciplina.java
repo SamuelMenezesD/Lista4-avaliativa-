@@ -6,13 +6,11 @@ public class Disciplina {
 
     private int Id;
 
-    private String Curriculo; //TODO: Analisar oq é curriculo
+    private String Curriculo;
 
     private Aluno[] alunos = new Aluno[35];
 
     private Professor[] professores = new Professor[5];
-
-    
 
     public Professor[] getProfessores() {
         return professores;
@@ -53,7 +51,4 @@ public class Disciplina {
     public void setAlunos(Aluno[] alunos) {
         this.alunos = alunos;
     }
-
-    
-
 }
