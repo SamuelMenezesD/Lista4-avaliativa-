@@ -2,12 +2,11 @@ package br.edu.up.Tela;
 
 import java.util.Scanner;
 
-import br.edu.up.Controller.AgendaController;
+
+import br.edu.up.Modelo.AgendaContatos;
 import br.edu.up.Modelo.Contato;
 import br.edu.up.Modelo.ContatoComercial;
 import br.edu.up.Modelo.ContatoPessoal;
-
-
 
 public class Tela {
   
