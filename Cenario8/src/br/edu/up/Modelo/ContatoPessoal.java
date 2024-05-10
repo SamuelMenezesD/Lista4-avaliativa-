@@ -1,4 +1,4 @@
-package br.edu.up.Modelo;
+package Modelo;
 public class ContatoPessoal extends Contato {
     private String aniversario;
 

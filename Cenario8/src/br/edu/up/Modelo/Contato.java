@@ -1,4 +1,4 @@
-package br.edu.up.Modelo;
+package Modelo;
 public abstract class Contato{
 
     private int codigo;

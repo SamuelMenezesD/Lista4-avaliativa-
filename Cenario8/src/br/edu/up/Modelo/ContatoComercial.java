@@ -1,4 +1,4 @@
-package br.edu.up.Modelo;
+package Modelo;
 public class ContatoComercial extends Contato {
     private String cnpj;
     

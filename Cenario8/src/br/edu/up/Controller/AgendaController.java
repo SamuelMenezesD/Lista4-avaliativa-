@@ -1,7 +1,7 @@
-package br.edu.up.Controller;
+package Controller;
 
-import br.edu.up.Modelo.AgendaContatos;
-import br.edu.up.Modelo.Contato;
+import Modelo.AgendaContatos;
+import Modelo.Contato;
 
 public class AgendaController {
 
