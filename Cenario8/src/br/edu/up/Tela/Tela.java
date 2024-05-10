@@ -2,10 +2,10 @@ package br.edu.up.Tela;
 
 import java.util.Scanner;
 
-import Modelo.AgendaContatos;
-import Modelo.Contato;
-import Modelo.ContatoComercial;
-import Modelo.ContatoPessoal;
+import br.edu.up.Modelo.AgendaContatos;
+import br.edu.up.Modelo.Contato;
+import br.edu.up.Modelo.ContatoComercial;
+import br.edu.up.Modelo.ContatoPessoal;
 
 public class Tela {
     private static Scanner scanner;
