@@ -1,6 +1,6 @@
 package br.up.edu.Model;
 
-public class Cliente {
+public abstract class Cliente {
 
     private String Nome;
     
@@ -15,6 +15,46 @@ public class Cliente {
     private double VlrEmprestado;
 
     
+
+    @Override
+    public String toString() {
+        return "Cliente Nome: " + Nome + ", Telefone: " + Telefone + ", Email: " + Email + ", Endereco: " + Endereco
+                + ", VlrMaximoCredito: " + VlrMaximoCredito + ", VlrEmprestado: " + VlrEmprestado + " ";
+    }
+
+    public Cliente() {
+    }
+
+    public Cliente(double vlrMaximoCredito) {
+        VlrMaximoCredito = vlrMaximoCredito;
+    }
+
+    public Cliente(String nome, String telefone, String email, br.up.edu.Model.Endereco endereco,
+            double vlrMaximoCredito) {
+        Nome = nome;
+        Telefone = telefone;
+        Email = email;
+        Endereco = endereco;
+        VlrMaximoCredito = vlrMaximoCredito;
+    }
+
+    public void Emprestar(double Valor){
+
+        this.VlrEmprestado += Valor;
+
+    }
+
+    public void Devolver(double Valor){
+
+        this.VlrEmprestado -= Valor;
+
+    }
+
+    public double GetSaldo(){
+
+        return (this.VlrMaximoCredito - this.VlrEmprestado);
+        
+    }
 
     public String getNome() {
         return Nome;
