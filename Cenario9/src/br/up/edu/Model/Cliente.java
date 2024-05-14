@@ -40,9 +40,15 @@ public abstract class Cliente {
 
     public void Emprestar(double Valor){
 
-        this.VlrEmprestado += Valor;
-
+        if(Valor > this.VlrMaximoCredito || Valor > (this.VlrMaximoCredito - VlrEmprestado)){
+        
+            System.out.println("Impossivel de se realizar Emprestimo");
+    
     }
+
+    this.VlrEmprestado += Valor;
+    
+}
 
     public void Devolver(double Valor){
 
