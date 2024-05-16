@@ -1,9 +1,15 @@
-package Modelo;
+package br.edu.up.Modelo;
 public class ContatoComercial extends Contato {
     private String cnpj;
     
     public ContatoComercial(String nome, String telefone,  int codigo, String cnpj) {
         super(codigo, nome,telefone);
+        this.cnpj = cnpj;
+        
+    }
+    
+    public ContatoComercial(String nome, String telefone, String cnpj) {
+        super(nome,telefone);
         this.cnpj = cnpj;
         
     }

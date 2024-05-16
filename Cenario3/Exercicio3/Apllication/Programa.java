@@ -1,6 +1,7 @@
 package Exercicio3.Apllication;
 
-import Exercicio1.Domain.Livro;
+
+import Exercicio3.Domain.Livro3;
 import Exercicio3.Domain.Pilha;
 
 public class Programa {
@@ -13,7 +14,7 @@ public class Programa {
         
         String AutoresLivro1[] = { "Cay S. Horstmann", "Gary Cornell" };
 
-        Livro livroCoreJava = new Livro("1598FHK", "Core Java", AutoresLivro1, 2005, " 0130819336");
+        Livro3 livroCoreJava = new Livro3("1598FHK", "Core Java", AutoresLivro1, 2005, " 0130819336");
 
         pilha.push(livroCoreJava);
 

@@ -1,36 +1,42 @@
-package Modelo;
+package br.edu.up.Modelo;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AgendaContatos {
 
     private List<Contato> contatos;
-    private int proximoCodigo;
-
+    
     public AgendaContatos() {
+
         contatos = new ArrayList<>();
-        proximoCodigo = 1;
+       
     }
 
     public void adicionarContato(Contato contato) {
-        contato.setCodigo(proximoCodigo);
+        
+        contato.setCodigo(contato.hashCode());
+
         contatos.add(contato);
-        proximoCodigo++;
+   
     }
 
-    public boolean removerContato(int codigo) {
+    public boolean removerContato(Contato contatoRm) {
+       
         for (Contato contato : contatos) {
-            if (contato.getCodigo() == codigo) {
+           
+            if (contato.getCodigo() == contatoRm.hashCode()) {
+                
                 contatos.remove(contato);
+                
                 return true;
             }
         }
         return false;
     }
 
-    public Contato buscarContato(int codigo) {
+    public Contato buscarContato(Contato contatoSearch) {
         for (Contato contato : contatos) {
-            if (contato.getCodigo() == codigo) {
+            if (contato.getCodigo() == contatoSearch.getCodigo()) {
                 return contato;
             }
         }

@@ -25,7 +25,7 @@ public class Tela {
             switch (opcao) {
                 case 1:
 
-                    adicionarProfessor();
+                adicionarProfessor();
                 
                     break;
                 case 2:

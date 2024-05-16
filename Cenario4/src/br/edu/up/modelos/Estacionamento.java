@@ -72,7 +72,8 @@ public class Estacionamento {
     public void RetirarCarro(String placa) {
 
         if(this.QuantidadeCarrosAtual >= 1){
-        for (Carro carro : carros) {
+        
+            for (Carro carro : carros) {
 
             if (carro.getPlaca().equalsIgnoreCase(placa)) {
 
@@ -87,8 +88,10 @@ public class Estacionamento {
 
         System.out.println("Carro retirado!");
     }
+
     else{System.out.println("Quantidade de carros invalida para retirada");}
-    }
+    
+}
 
     public Carro[] getCarros() {
         return this.carros;

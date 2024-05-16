@@ -9,9 +9,10 @@ import br.edu.up.modelos.Estacionamento;
 public class TelaEstacionamento {
 
 
-    Scanner leitor = new Scanner(System.in);
+   private static Scanner leitor = new Scanner(System.in);
 
-    public void Mostrarmenu() {
+    public static boolean Mostrarmenu() {
+       
         System.out.println();
         System.out.println("-----------------");
         System.out.println("  MENU INICIAL");
@@ -31,6 +32,7 @@ public class TelaEstacionamento {
 
                 Carro carro = new Carro();
 
+                leitor.nextLine();
                 System.out.println("Insira Placa do Carro");
                 carro.setPlaca(leitor.nextLine());
 
@@ -44,6 +46,7 @@ public class TelaEstacionamento {
 
             case 2: {
 
+                leitor.nextLine();
                 System.out.println("Retirar Carro Favor Informar A Placa: ");
                 String placa = leitor.nextLine();
 
@@ -61,8 +64,11 @@ public class TelaEstacionamento {
                 break;
             }
             default:
-                break;
+                    return false;
+                
         }
+
+        return true;
 
     }
 

@@ -1,7 +1,8 @@
-package Controller;
+package br.edu.up.Controller;
 
-import Modelo.AgendaContatos;
-import Modelo.Contato;
+import br.edu.up.Modelo.AgendaContatos;
+import br.edu.up.Modelo.Contato;
+import br.edu.up.Modelo.ContatoPessoal;
 
 public class AgendaController {
 
@@ -19,15 +20,23 @@ public class AgendaController {
 
     }
 
-    public static boolean ExcluirContatoCodigo(int codigo){
+    public static boolean ExcluirContatoCodigo(String nome,String Telefone){
 
-        return agenda.removerContato(codigo);
+        Contato ContRm = new ContatoPessoal(nome,Telefone);
+
+        ContRm.setCodigo(ContRm.hashCode());
+        
+        return agenda.removerContato(ContRm);
 
     }
 
-    public static Contato ConsultarContatoCodigo(int codigo){
+    public static Contato ConsultarContatoCodigo(String nome,String Telefone){
 
-        return agenda.buscarContato(codigo);
+        Contato ContSearch = new ContatoPessoal(nome, Telefone);
+
+        ContSearch.setCodigo(ContSearch.hashCode());
+
+        return agenda.buscarContato(ContSearch);
 
     }
 

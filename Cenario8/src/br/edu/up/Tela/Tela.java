@@ -1,28 +1,20 @@
-package Tela;
+package br.edu.up.Tela;
 
 import java.util.Scanner;
 
-import Controller.AgendaController;
-import Modelo.Contato;
-import Modelo.ContatoComercial;
-import Modelo.ContatoPessoal;
+import br.edu.up.Controller.AgendaController;
+import br.edu.up.Modelo.Contato;
+import br.edu.up.Modelo.ContatoComercial;
+import br.edu.up.Modelo.ContatoPessoal;
+
+
 
 public class Tela {
   
-    private static Scanner scanner;
+    private static Scanner scanner = new Scanner(System.in);
   
-
-    public static void main(String[] args) {
-        
-        scanner = new Scanner(System.in);
-
-        exibirMenu();
-    }
-
     public static void exibirMenu() {
-        boolean sair = false;
-
-        while (!sair) {
+        
             System.out.println("===== MENU =====");
             System.out.println("1. Incluir um contato pessoal");
             System.out.println("2. Incluir um contato comercial");
@@ -31,7 +23,11 @@ public class Tela {
             System.out.println("5. Listar todos os contatos");
             System.out.println("6. Sair do programa");
             System.out.print("Escolha uma opção: ");
+
+
             int opcao = scanner.nextInt();
+
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -49,27 +45,24 @@ public class Tela {
                 case 5:
                     listarContatos();
                     break;
-                case 6:
-                    sair = true;
-                    break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }
-        }
+        
     }
 
     public static void incluirContatoPessoal() {
         System.out.println("===== Incluir Contato Pessoal =====");
         System.out.print("Nome: ");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         System.out.print("Telefone: ");
-        String telefone = scanner.next();
-        System.out.print("Codigo: ");
-        int codigo = scanner.nextInt();
+        String telefone = scanner.nextLine();
+        
         System.out.print("Aniversario: ");
-        String aniversario = scanner.next();
+        String aniversario = scanner.nextLine();
 
-        ContatoPessoal contatoPessoal = new ContatoPessoal( nome,telefone, codigo,aniversario);
+        ContatoPessoal contatoPessoal = new ContatoPessoal(nome,telefone,aniversario);
+        contatoPessoal.setCodigo(contatoPessoal.hashCode());
         
         AgendaController.IncluirContatoPessoal(contatoPessoal);
 
@@ -80,15 +73,17 @@ public class Tela {
     public static void incluirContatoComercial() {
         System.out.println("===== Incluir Contato Comercial =====");
         System.out.print("Nome: ");
-        String nome = scanner.next();
+        String nome = scanner.nextLine();
         System.out.print("Telefone: ");
-        String telefone = scanner.next();
-        System.out.print("Codigo: ");
-        int codigo = scanner.nextInt();
+        String telefone = scanner.nextLine();
+
         System.out.print("CNPJ: ");
         String cnpj = scanner.next();
 
-        ContatoComercial contatoComercial = new ContatoComercial(nome, telefone, codigo, cnpj);
+        ContatoComercial contatoComercial = new ContatoComercial(nome,telefone,cnpj);
+
+        contatoComercial.setCodigo(contatoComercial.hashCode());
+
         AgendaController.IncluirContatoComercial(contatoComercial);
         System.out.println("Contato comercial adicionado com sucesso!");
         System.out.println();
@@ -96,10 +91,13 @@ public class Tela {
 
     public static void excluirContato() {
         System.out.println("===== Excluir Contato =====");
-        System.out.print("Código do contato: ");
-        int codigo = scanner.nextInt();
+        System.out.print("Nome do contato: ");
+        String Nome = scanner.nextLine();
 
-        boolean contatoRemovido = AgendaController.ExcluirContatoCodigo(codigo);
+        System.out.print("Telefone do contato: ");
+        String telefone = scanner.nextLine();
+
+        boolean contatoRemovido = AgendaController.ExcluirContatoCodigo(Nome,telefone);
 
         if (contatoRemovido) {
             System.out.println("Contato removido com sucesso!");
@@ -112,10 +110,13 @@ public class Tela {
 
     public static void consultarContato() {
         System.out.println("===== Consultar Contato =====");
-        System.out.print("Código do contato: ");
-        int codigo = scanner.nextInt();
+        System.out.print("Nome do contato: ");
+        String Nome = scanner.nextLine();
 
-        Contato contato = AgendaController.ConsultarContatoCodigo(codigo);
+        System.out.print("Telefone do contato: ");
+        String telefone = scanner.nextLine();
+
+        Contato contato = AgendaController.ConsultarContatoCodigo(Nome,telefone);
 
         if (contato != null) {
             System.out.println(contato);

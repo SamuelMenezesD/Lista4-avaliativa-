@@ -1,13 +1,13 @@
 package Exercicio3.Domain;
 import java.util.Scanner;
 
-import Exercicio1.Domain.Livro;
+
 
 public class Menu {
 
     private static Pilha pilha;
 
-    private static final Livro livro = new Livro();
+    private static final Livro3 livro = new Livro3();
 
     private static final Scanner scanner = new Scanner(System.in);
 

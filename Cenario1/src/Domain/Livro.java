@@ -1,4 +1,4 @@
-package Exercicio1.Domain;
+package Domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;

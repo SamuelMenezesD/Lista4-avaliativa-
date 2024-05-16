@@ -1,6 +1,19 @@
-package Modelo;
+package br.edu.up.Modelo;
 public class ContatoPessoal extends Contato {
     private String aniversario;
+
+    public ContatoPessoal(String nome,String Telefone){
+
+        super(nome, Telefone);
+
+    }
+
+    public ContatoPessoal(String nome,String Telefone,String aniversario){
+       
+        super(nome, Telefone);
+        this.aniversario = aniversario;
+
+    }
 
     public ContatoPessoal(String nome, String telefone,  int codigo, String aniversario) {
         super(codigo, nome,telefone);
