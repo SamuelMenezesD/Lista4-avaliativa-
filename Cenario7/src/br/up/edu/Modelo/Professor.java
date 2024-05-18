@@ -2,6 +2,14 @@ package br.up.edu.Modelo;
 
 public class Professor extends Pessoa{
 
+    
+
+    public Professor(String nome, String rG, String matricula, String identCurriculoLattes, Titulacao titulacao) {
+        super(nome, rG, matricula);
+        IdentCurriculoLattes = identCurriculoLattes;
+        this.titulacao = titulacao;
+    }
+
     private String IdentCurriculoLattes;
 
     private Titulacao titulacao;
