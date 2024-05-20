@@ -55,6 +55,11 @@ public class ClientePessoa extends Cliente{
         Altura = altura;
     }
 
+    @Override
+    public String toString() {
+        return "\nClientePessoa CPF: " + CPF + ", Peso: " + Peso + ", Altura: " + Altura + "\n";
+    }
+
     
 
 }

@@ -49,6 +49,12 @@ public class ClienteEmpresa extends Cliente{
         AnoFundacao = anoFundacao;
     }
 
+    @Override
+    public String toString() {
+        return "\nClienteEmpresa CNPJ: " + CNPJ + ", InscrEstadual: " + InscrEstadual + ", AnoFundacao: " + AnoFundacao
+                + "\n";
+    }
+
     
 
 }
