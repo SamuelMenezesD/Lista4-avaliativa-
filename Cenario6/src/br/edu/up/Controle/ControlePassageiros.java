@@ -6,13 +6,13 @@ import br.edu.up.Modelo.Passageiros;
 
 public class ControlePassageiros {
 
-    Scanner  scanner = new Scanner(System.in);
+   private static Scanner scanner = new Scanner(System.in);
     
-    private int quantidadePassageiros;
-    private Passageiros[] passageiros = new Passageiros[quantidadePassageiros];
+    private static int quantidadePassageiros;
+    private static  Passageiros[] passageiros = new Passageiros[quantidadePassageiros];
     
 
-    private String cadastrarPassageiro() {
+    public static String cadastrarPassageiro() {
 
         System.out.println("----- Cadastro de Passageiro -----");
 
@@ -30,6 +30,16 @@ public class ControlePassageiros {
         quantidadePassageiros++;
         
         return "Passageiro cadastrado com sucesso!";
+    }
+
+    public static void TodosPassageiro(){
+
+        for (Passageiros passageiros2 : passageiros) {
+            
+            System.out.println(passageiros2);
+
+        }
+
     }
     
 }

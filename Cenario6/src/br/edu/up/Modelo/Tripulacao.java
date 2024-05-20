@@ -10,6 +10,11 @@ public class Tripulacao extends Pessoa{
         return Matricula;
     }
 
+    public Tripulacao(String matricula, String identificacaoAeronautica) {
+        Matricula = matricula;
+        IdentificacaoAeronautica = identificacaoAeronautica;
+    }
+
     public void setMatricula(String matricula) {
         Matricula = matricula;
     }
@@ -18,8 +23,16 @@ public class Tripulacao extends Pessoa{
         return IdentificacaoAeronautica;
     }
 
+    public Tripulacao() {
+    }
+
     public void setIdentificacaoAeronautica(String identificacaoAeronautica) {
         IdentificacaoAeronautica = identificacaoAeronautica;
+    }
+
+    @Override
+    public String toString() {
+        return "\nTripulacao Matricula: " + Matricula + ", IdentificacaoAeronautica: " + IdentificacaoAeronautica + "\n";
     }
 
     

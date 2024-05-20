@@ -3,13 +3,12 @@ package br.edu.up.Tela;
 import java.util.Scanner;
 
 import br.edu.up.Controle.ControlePassageiros;
-import br.edu.up.modelos.Carro;
-
+import br.edu.up.Controle.ControleTripulacao;
 public class Voo {
 
-    private Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
  
-    public void Mostrarmenu() {
+    public static void Mostrarmenu() {
         System.out.println("----- Menu -----");
         System.out.println("1. Cadastrar passageiro");
         System.out.println("2. Cadastrar tripulação");
@@ -22,16 +21,16 @@ public class Voo {
 
         switch (opcao) {
             case 1:
-                cadastrarPassageiro();
+                ControlePassageiros.cadastrarPassageiro();
                 break;
             case 2:
-                cadastrarTripulacao();
+                ControleTripulacao.cadastrarTripulacao();
                 break;
             case 3:
-                consultarPassageiro();
+                ControlePassageiros.TodosPassageiro();
                 break;
             case 4:
-                consultarTripulacao();
+                ControleTripulacao.TodosTripualacao();
                 break;
             case 5:
                 System.out.println("Encerrando o programa...");

@@ -22,6 +22,11 @@ public class Passageiros extends Pessoa{
         this.passagem = passagem;
     }
 
+    @Override
+    public String toString() {
+        return "\nPassageiros IdentificadorBagagem: " + IdentificadorBagagem + ", passagem: " + passagem + "\n";
+    }
+
     
 
 }

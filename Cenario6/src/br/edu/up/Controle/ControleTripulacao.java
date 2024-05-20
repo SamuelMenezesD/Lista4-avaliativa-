@@ -7,30 +7,41 @@ import br.edu.up.Modelo.Tripulacao;
 
 public class ControleTripulacao {
 
-    private int quantidadetripulacao;
+    private static int quantidadetripulacao = 0;
 
-    private Tripulacao[] tripulacaos = new Tripulacao[quantidadetripulacao];
+    private static Tripulacao[] tripulacaos = new Tripulacao[quantidadetripulacao];
 
-    Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    private String cadastrarTripulacao() {
+    public static String cadastrarTripulacao() {
         System.out.println("----- Cadastro de Tripulação -----");
         
+        var Tripulacao = new Tripulacao(); 
+
         System.out.print("Nome do tripulante: ");
-        tripulacaos.setNome(scanner.nextLine());
-        
-        System.out.print("RG do tripulante: ");
-        tripulacaos.setRg(scanner.nextLine());
+        Tripulacao.setNome(scanner.nextLine());
         
         System.out.print("Identificação aeronáutica: ");
-        tripulacaos.setIdentificacaoAeronautica(scanner.nextLine());
+        Tripulacao.setIdentificacaoAeronautica(scanner.nextLine());
 
         System.out.print("Matrícula do tripulante: ");
-        tripulacaos.setMatricula(scanner.nextLine());
+        Tripulacao.setMatricula(scanner.nextLine());
         
-        Tripulacao tripulacao = new Tripulacao[quantidadetripulacao](nome, rg, identificacaoAeronautica, matricula);
-        
+        tripulacaos[quantidadetripulacao] = Tripulacao;
+
+        quantidadetripulacao++;
+
         return "Tripulação cadastrada com sucesso!";
+    }
+
+    public static void TodosTripualacao(){
+
+        for (Tripulacao tripulacao2 : tripulacaos) {
+            
+            System.out.println(tripulacao2);
+
+        }
+
     }
     
 }
