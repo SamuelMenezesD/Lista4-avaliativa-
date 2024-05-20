@@ -1,11 +1,11 @@
-package Exercicio3.Domain;
+package Domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Livro3 {
+public class Livro {
 
     private  final Scanner scanner = new Scanner(System.in);
 
@@ -21,7 +21,7 @@ public class Livro3 {
 
     
 
-    public Livro3() {
+    public Livro() {
     }
 
     public String ShowLivro() {
@@ -36,7 +36,7 @@ public class Livro3 {
         return Text;
     }
 
-    public Livro3(String codigo, String titulo, String[] autores, int ano, String iSBN) {
+    public Livro(String codigo, String titulo, String[] autores, int ano, String iSBN) {
         this.codigo = codigo;
         Titulo = titulo;
         Autores = autores;
@@ -44,7 +44,7 @@ public class Livro3 {
         ISBN = iSBN;
     }
 
-    public  Livro3 CriarLivro(){
+    public  Livro CriarLivro(){
 
         System.out.println("Informe o Nome do livro: ");
         var nome = scanner.nextLine();
@@ -62,7 +62,7 @@ public class Livro3 {
 
         SetarAutores();
 
-        return new Livro3(codigo, nome, Autores, ano, ISBN);
+        return new Livro(codigo, nome, Autores, ano, ISBN);
 
 
     }

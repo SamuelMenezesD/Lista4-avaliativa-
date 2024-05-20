@@ -1,5 +1,4 @@
-package Exercicio3.Domain;
-
+package Domain;
 import java.util.Arrays;
 
 
@@ -10,16 +9,16 @@ public class Pilha {
 
     private int ItensPilha = 0;
 
-    private Livro3[] PilhaLivros;
+    private Livro[] PilhaLivros;
 
     public Pilha(int tamanhoPilha) {
 
         TamanhoPilha = tamanhoPilha;
-        this.PilhaLivros = new Livro3[TamanhoPilha];
+        this.PilhaLivros = new Livro[TamanhoPilha];
 
     }
 
-    public void push(Livro3 livro) {
+    public void push(Livro livro) {
 
         if (this.ItensPilha == this.TamanhoPilha) {
 

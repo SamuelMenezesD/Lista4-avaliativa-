@@ -1,4 +1,4 @@
-package Exercicio3.Domain;
+package Domain;
 import java.util.Scanner;
 
 
@@ -7,7 +7,7 @@ public class Menu {
 
     private static Pilha pilha;
 
-    private static final Livro3 livro = new Livro3();
+    private static final Livro livro = new Livro();
 
     private static final Scanner scanner = new Scanner(System.in);
 
